@@ -62,13 +62,9 @@
          .attr("width",xScale.step()-1)
 		 .attr("height",function(d){return yScale(d.number)})
 		 
-		 
-		 
-	
-	     
-	     
-		 
-	}
+		 inner.append("g").call(xAxis);
+         inner.append("g").call(yAxis);
+	 }
     
 	
 	 
