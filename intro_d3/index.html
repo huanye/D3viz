@@ -9,7 +9,7 @@
 		  fill:rgb(0,191,255);
 	  }
 	  .low {
-	  	  fill:rgb(135,206,250);
+	  	  fill:rgb(176,196,222);
 	  }
   </style>
 </head>
@@ -61,6 +61,13 @@
 		 bar.append("rect")
          .attr("width",xScale.step()-1)
 		 .attr("height",function(d){return yScale(d.number)})
+		 .attr("class", function(d){
+			 if (d.number>30000){
+				 return "high";
+			 }
+			 else
+				 return "low";
+		 });
 		 
 		 inner.append("g").call(xAxis);
          inner.append("g").call(yAxis);
