@@ -5,7 +5,6 @@
   <script type="text/javascript" src="./d3/d3.min.js"></script>
   <style>
 	  .high {
-		  
 		  fill:rgb(0,191,255);
 	  }
 	  .low {
@@ -18,23 +17,20 @@
 <svg></svg>
 <script type="text/javascript">
 	function draw(data){
-        var margin = 100;
-        var width = 600 - margin*2;
-        var height = 450 - margin*2;
 		
-	    var margin = {top: 100, right: 20, bottom: 50, left: 150},
-	    width = 600 - margin.left - margin.right,
-	    height = 450 - margin.top - margin.bottom;
+	     var margin = {top: 100, right: 20, bottom: 50, left: 150},
+	     width = 600 - margin.left - margin.right,
+	     height = 450 - margin.top - margin.bottom;
 		
 	 
-	    var svg = d3.select("svg")
+	     var svg = d3.select("svg")
 		    .attr("width",width+margin.left+margin.right)
 		    .attr("height",height+margin.top+margin.bottom);
 			
 		// sort the data based on the bar frequency 	
-		data.sort(function(a, b) {return b.number-a.number;});
+		 data.sort(function(a, b) {return b.number-a.number;});
 		
-		var xScale = d3.scaleBand()
+		 var xScale = d3.scaleBand()
 		 .rangeRound([0, width])
 		 .padding(0.05)
 		 .domain(data.map(function(d) { return d.PW_LEVEL_9089; }));
@@ -44,7 +40,6 @@
 		 .domain([0, d3.max(data, function(d) { return d.number; })]);
 		 
 	     var xAxis = d3.axisTop(xScale);
-	     
 	     var yAxis = d3.axisLeft(yScale);
 	     
 		 // the inner frame for barplot 
@@ -129,14 +124,10 @@
          .attr("y",-3*margin.top/5)
          .attr("font-size","10")
          .text("More than 30000 Permanent Visa applications are filed with prevailing wage level II")
-		 
-		 
 
-		 
-         
 	 }
     
-	
+	 // load data from .json file
 	 
 	 d3.json("data.json",function(error,data){
  		if(error){
