@@ -9,7 +9,7 @@
 		  fill:rgb(0,191,255);
 	  }
 	  .low {
-	  	  fill:rgb(176,196,222);
+	  	  fill:rgb(173,216,230);
 	  }
   </style>
 </head>
@@ -22,7 +22,7 @@
         var width = 600 - margin*2;
         var height = 450 - margin*2;
 		
-	    var margin = {top: 100, right: 20, bottom: 30, left: 150},
+	    var margin = {top: 100, right: 20, bottom: 50, left: 150},
 	    width = 600 - margin.left - margin.right,
 	    height = 450 - margin.top - margin.bottom;
 		
@@ -71,6 +71,23 @@
 		 
 		 inner.append("g").call(xAxis);
          inner.append("g").call(yAxis);
+		 
+         svg.append("rect")
+		 .attr("width",xScale.step()/3)
+		 .attr("height",xScale.step()/4)
+		 .attr("fill","#00BFFF")
+		 .attr("x", margin.left+width/4)
+		 .attr("y",margin.top+height+margin.bottom/3)
+		 
+		 svg.append("rect")
+		 .attr("width",xScale.step()/3)
+		 .attr("height",xScale.step()/4)
+		 .attr("fill","#ADD8E6")
+		 .attr("x", margin.left+2*width/3)
+		 .attr("y",margin.top+height+margin.bottom/3)
+		 
+		 
+         
 	 }
     
 	
