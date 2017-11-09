@@ -104,17 +104,33 @@
          .attr("transform", "rotate(-90)")
          .attr("y", -margin.left/2)
          .attr("x",-height / 2)
-         .attr("font-size","12")
+         .attr("font-size","10")
          .style("text-anchor", "middle")
          .text("Number of Applications"); 
 		 
+		 // add x axis label
          inner.append("text")
-         
          .attr("x", width/2)
          .attr("y",-margin.top / 4)
-         .attr("font-size","12")
+         .attr("font-size","10")
          .style("text-anchor", "middle")
-         .text("Wage Level"); 
+         .text("Wage Level");
+		 
+		 // add title
+		 inner.append("text") 
+         .attr("x", 0)
+         .attr("y",-4*margin.top/5)
+         .attr("font-size","13")
+		 .attr("font-weight","bold")
+         .text("The most common wage level for Permanent Visa applicants in 2017")
+		 // add subtitle
+		 inner.append("text") 
+         .attr("x", 0)
+         .attr("y",-3*margin.top/5)
+         .attr("font-size","10")
+         .text("More than 30000 Permanent Visa applications are filed with prevailing wage level II")
+		 
+		 
 
 		 
          
