@@ -72,6 +72,7 @@
 		 inner.append("g").call(xAxis);
          inner.append("g").call(yAxis);
 		 
+		 // add legends
          svg.append("rect")
 		 .attr("width",xScale.step()/3)
 		 .attr("height",xScale.step()/4)
@@ -98,6 +99,12 @@
 		 .text("number < 30000")
 		 .attr("font-size","12");
 		 
+		 // add y axis label
+         svg.append("text")
+        .attr("x",  margin.left/3)
+        .attr("y",  (height+margin.top+margin.bottom) / 2)
+		.text("Value")
+
 		 
          
 	 }
